@@ -163,8 +163,8 @@
                 pointRadius: "0",
                 borderWidth: 4
             }, {
-                label: 'Sales',
-                data: [5, 30, 16, 23, 8, 14, 11],
+                label: ['wallet', 'total deposit', 'total purchase'],
+                data:  ['{{Auth::user()->wallet}}', '{{$totaldeposite}}', 30000],
                 backgroundColor: gradientStroke3,
                 borderColor: gradientStroke4,
                 pointRadius :"0",
