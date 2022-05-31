@@ -124,3 +124,90 @@
 <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
 <script src="{{asset('assets/plugins/morris/js/morris.js')}}"></script>
 <script src="{{asset('assets/js/index2.js')}}"></script>
+@if(isset($totaldeposite))
+<script>
+
+
+    // chart 7
+    var ctx = document.getElementById('chart7').getContext('2d');
+
+
+
+    var gradientStroke1 = ctx.createLinearGradient(0, 0, 0, 300);
+    gradientStroke1.addColorStop(0, 'rgba(255, 255, 0, 0.5)');
+    gradientStroke1.addColorStop(1, 'rgba(233, 30, 99, 0.0)');
+
+    var gradientStroke2 = ctx.createLinearGradient(0, 0, 0, 300);
+    gradientStroke2.addColorStop(0, '#ffff00');
+    gradientStroke2.addColorStop(1, '#e91e63');
+
+
+    var gradientStroke3 = ctx.createLinearGradient(0, 0, 0, 300);
+    gradientStroke3.addColorStop(0, 'rgba(0, 114, 255, 0.5)');
+    gradientStroke3.addColorStop(1, 'rgba(0, 200, 255, 0.0)');
+
+    var gradientStroke4 = ctx.createLinearGradient(0, 0, 0, 300);
+    gradientStroke4.addColorStop(0, '#0072ff');
+    gradientStroke4.addColorStop(1, '#00c8ff');
+
+
+    var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: ['wallet', 'total deposit', 'total purchase'],
+            datasets: [{
+                label: 'Transaction Chart',
+                data: ['{{Auth::user()->wallet}}', '{{$totaldeposite}}', 30000],
+                backgroundColor: "#ff0066",
+                borderColor: "#ff0066",
+                pointRadius: "0",
+                borderWidth: 4
+            }, {
+                label: 'Sales',
+                data: [5, 30, 16, 23, 8, 14, 11],
+                backgroundColor: gradientStroke3,
+                borderColor: gradientStroke4,
+                pointRadius :"0",
+                pointHoverRadius:"0",
+                borderWidth: 3
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: '#585757',
+                    boxWidth: 40
+                }
+            },
+            tooltips: {
+                enabled: false
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: '#585757'
+                    },
+                    gridLines: {
+                        display: true,
+                        color: "rgba(0, 0, 0, 0.07)"
+                    },
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: '#585757'
+                    },
+                    gridLines: {
+                        display: true,
+                        color: "rgba(0, 0, 0, 0.07)"
+                    },
+                }]
+            }
+        }
+    });
+
+</script>
+@endif

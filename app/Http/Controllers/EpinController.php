@@ -106,7 +106,7 @@ $airtel=$row['airtel'];
      }
      if ($request->amount < 0) {
 
-         $mg = "error transaction";
+         $mg = "error transaction  ";
          return redirect("epin")->with('status', $mg);
 
 
