@@ -74,7 +74,7 @@ $airtel=$row['airtel'];
          'title' => 'Primedata Epin Sample',
          'date' => date('m/d/Y')
      ];
-     $pin= pin::take(1)->skip(1)->get();
+     $pin= pin::get();
 //     return  view('sample', compact('pin'));
 
      $pdf = PDF::loadView('sample', compact('pin'))->setOptions(['defaultFont' => 'sans-serif']);
