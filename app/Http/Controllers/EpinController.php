@@ -77,7 +77,7 @@ $airtel=$row['airtel'];
      $pin= pin::take(1)->skip(1)->get();
 //     return  view('sample', compact('pin'));
 
-     $pdf = PDF::loadView('sample', compact('pin'));
+     $pdf = PDF::loadView('sample', compact('pin'))->setOptions(['defaultFont' => 'sans-serif']);
 
      return $pdf->download('sample.pdf');
  }
