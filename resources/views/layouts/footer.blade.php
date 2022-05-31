@@ -158,7 +158,7 @@
             datasets: [{
                 label: 'Transaction Chart',
                 data: ['{{Auth::user()->wallet}}', '{{$totaldeposite}}', 30000],
-                backgroundColor: "#ff0066",
+                backgroundColor:  gradientStroke3,
                 borderColor: "#ff0066",
                 pointRadius: "0",
                 borderWidth: 4
