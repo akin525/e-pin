@@ -129,7 +129,7 @@
 
 
     // chart 7
-    var ctx = document.getElementById('chart7').getContext('2d');
+    var ctx = document.getElementById('chart71').getContext('2d');
 
 
 
