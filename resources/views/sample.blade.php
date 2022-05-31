@@ -1,68 +1,17 @@
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--favicon-->
-    <link rel="icon" href="{{asset('assets/images/pri.png')}}" type="image/png" />
-    <!--plugins-->
-    <link href="{{asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
-    <!-- loader-->
-    <link href="{{asset('assets/css/pace.min.css')}}" rel="stylesheet" />
-    <script src="{{asset('assets/js/pace.min.js')}}"></script>
-    <!-- Bootstrap CSS -->
-    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
-    <link href="{{asset('assets/css/app.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/css/icons.css')}}" rel="stylesheet">
-
-    <!-- Theme Style CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/dark-theme.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/semi-dark.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/header-colors.css')}}" />
-    <title>{{Auth::user()->name}}</title>
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-
-    <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
-</head>
-<body>
-<!--wrapper-->
-<div class="wrapper">
-
-{{--    <div class="page-wrapper">--}}
-        <div class="page-content">
-                <div class="row">
-            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
-                @foreach($pin as $pi)
-                <div class="col">
-                    <div class="card radius-10">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <p class="mb-0 text-secondary">Primedata Company</p>
-                                    <h4 class="my-1">Ref No: 2J0997u100n036  ₦{{$pi['amount']}}</h4>
-                                    <h2 class="my-1"><b>PIN</b>: {{$pi['pin']}}</h2>
-                                    <h2 class="my-1">Serial No: {{$pi['serial']}}</h2>
-                                    <h2 class="my-1">Expiry Date: {{$pi['expiry']}}</h2>
-                                    <p class="mb-0 font-13 text-success"><i class="bx bxs-up-arrow align-middle"></i>Prime</p>
-                                </div>
-                                <div class="widgets-icons bg-light-success text-success ms-auto"><i class="bx bxs-wallet"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
-
-
+@foreach($pin as $pin1)
+<html><body><div>
+    <div style="margin-right: 5px; margin-left: 150px" align="left"><img src="https://5starcompany.com.ng/images/mcd_logo.png" width="100px" height="100px" /></div>
+    <div style="margin-right: 0px; font-family: calibri; font-size: 20px; clear: both;">
+        <div style="float: left; margin-left: 25px;">MCD Alert on {{date('D, d M Y - h:i:s a')}}
+        </div></div><div style="float: left; margin-left: 25px; margin-top: 10px; margin-bottom: 10px; font-family: calibri; font-size: 15px; clear: both;">Dear <strong>
+            {{$pin1['username']}}</strong>, <br /> A payment was successfully completed on your account. <br /> Please see below details of the transaction:</div><div style="clear: both;"><div style="margin-left: 25px; width: 400px; height: 385px; border-top-right-radius: 10px; border-top-left-radius: 10px; border: 1px solid #cccccc; font-family: calibri; font-size: 15px; float: left;"><table border="0" width="400" cellspacing="0" cellpadding="0" align="left"><tbody><tr><td style="padding-left: 15px;" bgcolor="#E5E5E5" width="200" height="24">Amount</td><td style="padding-left: 15px;" bgcolor="#E5E5E5" width="200" height="24">
+                        {{$pin1['amount']}}</td></tr><tr><td style="padding-left: 15px;" width="200" height="24">Payment Method</td><td style="padding-left: 15px;" width="200" height="24">
+                        wallet</td></tr><tr><td style="padding-left: 15px;" bgcolor="#E5E5E5" width="200" height="24">Description</td><td style="padding-left: 15px;" bgcolor="#E5E5E5" width="200" height="24">
+                        ppp</td></tr><tr><td style="padding-left: 15px;"  width="200" height="24">Reference Number</td><td style="padding-left: 15px;"  width="200" height="24">
+                        {{$pin1['serial']}}</td></tr><tr><td style="padding-left: 15px;" width="200" height="24">Initial Balance</td><td style="padding-left: 15px;" width="200" height="24">
+                       </td></tr><tr><td style="padding-left: 15px;" bgcolor="#E5E5E5" width="200" height="24">Wallet Balance</td><td style="padding-left: 15px;" bgcolor="#E5E5E5" width="200" height="24">
+                        </td></tr></tbody></table><div style="font-family: calibri; font-size: 12px; float: left; margin-top: 10px;">
+                <strong>Note</strong>: note<br /><br /> If you have any questions/issues, please contact us at <a href="mailto:info@5starcompany.com.ng">info@5starcompany.com.ng</a> <br /><span style="font-family: calibri; font-size: 15px; float: left; clear: both;">Thanks for choosing us</span><br /> <span style="font-family: calibri; font-size: 15px; float: left; clear: both; color: #006400;"><strong><font size="5">5Star Inn Company </font></strong>- <em>we remain unlimited</em> <br /> </span><div style="width: 300px; height: 25px; padding-left: 25px; float: left;"><a href="https://www.5starcompany.com.ng" target="_blank" rel="noopener noreferrer"><img style="width: 25px; height: 25px; margin-left: 5px;" src="https://5starcompany.com.ng/images/icons/web-icon.png" /></a><a href="https://facebook.com/5starcompany" target="_blank" rel="noopener noreferrer"><img style="width: 25px; height: 25px; margin-left: 5px;" src="https://5starcompany.com.ng/images/icons/facebook-icon.png" /></a><a href="mailto:info@5starcompany.com.ng" target="_blank" rel="noopener noreferrer"><img style="width: 25px; height: 25px; margin-left: 5px;" src="https://5starcompany.com.ng/images/icons/email-icon.png" /></a></div></div></div></div><div><div style="width: 100%; height: 25px; padding-left: 25px; float: left;"><span style="font-family: calibri; font-size: 12px; float: left; color: #f30100;"> This mail was sent with ❤ from Mega Cheap Data to
+{{$email}}</span></div></div>
+</div></body></html>
+@endforeach
